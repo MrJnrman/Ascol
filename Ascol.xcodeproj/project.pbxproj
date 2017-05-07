@@ -7,13 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DC29C68EC67BF285488D0AC /* Pods_Ascol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC365EEAD841383D1D3381F /* Pods_Ascol.framework */; };
+		B072B13B3EF1271B9E7741A4 /* Pods_AscolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB585F507D6CDF4E0B93013 /* Pods_AscolUITests.framework */; };
+		EBA349211EBE2D0B002EE473 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA349201EBE2D0B002EE473 /* Post.swift */; };
+		EBA349241EBE35E0002EE473 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA349231EBE35E0002EE473 /* DataService.swift */; };
+		EBA349281EBE6599002EE473 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA349271EBE6599002EE473 /* Profile.swift */; };
 		EBEEE8131EB6EE6C00C83151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8121EB6EE6C00C83151 /* AppDelegate.swift */; };
-		EBEEE8151EB6EE6C00C83151 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8141EB6EE6C00C83151 /* ViewController.swift */; };
+		EBEEE8151EB6EE6C00C83151 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8141EB6EE6C00C83151 /* SignInVC.swift */; };
 		EBEEE8181EB6EE6C00C83151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEEE8161EB6EE6C00C83151 /* Main.storyboard */; };
 		EBEEE81A1EB6EE6C00C83151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBEEE8191EB6EE6C00C83151 /* Assets.xcassets */; };
 		EBEEE81D1EB6EE6C00C83151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEEE81B1EB6EE6C00C83151 /* LaunchScreen.storyboard */; };
 		EBEEE8281EB6EE6C00C83151 /* AscolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8271EB6EE6C00C83151 /* AscolTests.swift */; };
 		EBEEE8331EB6EE6C00C83151 /* AscolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8321EB6EE6C00C83151 /* AscolUITests.swift */; };
+		EBEEE8461EB6EF1700C83151 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8451EB6EF1700C83151 /* Constants.swift */; };
+		EBEEE8481EB6F44B00C83151 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBEEE8471EB6F44B00C83151 /* GoogleService-Info.plist */; };
+		EBEEE84B1EB6F5FE00C83151 /* PostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE84A1EB6F5FE00C83151 /* PostsVC.swift */; };
+		EBEEE84F1EB6F6BB00C83151 /* FancyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE84E1EB6F6BB00C83151 /* FancyText.swift */; };
+		EBEEE8511EB6F6DA00C83151 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8501EB6F6DA00C83151 /* FancyButton.swift */; };
+		EBEEE8531EB6F70500C83151 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8521EB6F70500C83151 /* RoundView.swift */; };
+		EBEEE8551EB6F72B00C83151 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8541EB6F72B00C83151 /* FancyView.swift */; };
+		EBFCB9D01EB8108A00A10264 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB9CF1EB8108A00A10264 /* PostCell.swift */; };
+		EBFCB9D21EB87C2100A10264 /* PostDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB9D11EB87C2100A10264 /* PostDetailVC.swift */; };
+		EBFCB9D41EB88EFE00A10264 /* TitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB9D31EB88EFE00A10264 /* TitleText.swift */; };
+		EBFCB9D61EB89D8C00A10264 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB9D51EB89D8C00A10264 /* CommentsVC.swift */; };
+		EBFCB9D81EB8A53300A10264 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB9D71EB8A53300A10264 /* CommentCell.swift */; };
+		EBFCB9DA1EB8B36600A10264 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB9D91EB8B36600A10264 /* ProfileVC.swift */; };
+		EBFCB9DE1EB8C14B00A10264 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCB9DD1EB8C14B00A10264 /* ProfileImage.swift */; };
+		F4DEA9E8B64028E62D2F3537 /* Pods_AscolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4595D8E231C468B899F6C5E2 /* Pods_AscolTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +54,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AB585F507D6CDF4E0B93013 /* Pods_AscolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FC365EEAD841383D1D3381F /* Pods_Ascol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ascol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E758F952D2C8187A70FEC7 /* Pods-Ascol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ascol.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ascol/Pods-Ascol.release.xcconfig"; sourceTree = "<group>"; };
+		3AD6B7D65909DE50BCCF6A9B /* Pods-AscolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AscolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AscolUITests/Pods-AscolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4595D8E231C468B899F6C5E2 /* Pods_AscolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AscolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B302DD4501D3F6605A0A3BC /* Pods-AscolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AscolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AscolTests/Pods-AscolTests.release.xcconfig"; sourceTree = "<group>"; };
+		89B281083361AED4FB7DB563 /* Pods-AscolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AscolTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AscolTests/Pods-AscolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		98BDA71C96B13AC3F30B9EAC /* Pods-Ascol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ascol.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ascol/Pods-Ascol.debug.xcconfig"; sourceTree = "<group>"; };
+		CE043780FA55E9D0D3357690 /* Pods-AscolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AscolUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AscolUITests/Pods-AscolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EBA349201EBE2D0B002EE473 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		EBA349231EBE35E0002EE473 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		EBA349271EBE6599002EE473 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		EBEEE80F1EB6EE6C00C83151 /* Ascol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ascol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEEE8121EB6EE6C00C83151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBEEE8141EB6EE6C00C83151 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBEEE8141EB6EE6C00C83151 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		EBEEE8171EB6EE6C00C83151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBEEE8191EB6EE6C00C83151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBEEE81C1EB6EE6C00C83151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +79,21 @@
 		EBEEE82E1EB6EE6C00C83151 /* AscolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AscolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEEE8321EB6EE6C00C83151 /* AscolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscolUITests.swift; sourceTree = "<group>"; };
 		EBEEE8341EB6EE6C00C83151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBEEE8451EB6EF1700C83151 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EBEEE8471EB6F44B00C83151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EBEEE8491EB6F5C200C83151 /* Ascol.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ascol.entitlements; sourceTree = "<group>"; };
+		EBEEE84A1EB6F5FE00C83151 /* PostsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsVC.swift; sourceTree = "<group>"; };
+		EBEEE84E1EB6F6BB00C83151 /* FancyText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyText.swift; sourceTree = "<group>"; };
+		EBEEE8501EB6F6DA00C83151 /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
+		EBEEE8521EB6F70500C83151 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		EBEEE8541EB6F72B00C83151 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		EBFCB9CF1EB8108A00A10264 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		EBFCB9D11EB87C2100A10264 /* PostDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailVC.swift; sourceTree = "<group>"; };
+		EBFCB9D31EB88EFE00A10264 /* TitleText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleText.swift; sourceTree = "<group>"; };
+		EBFCB9D51EB89D8C00A10264 /* CommentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
+		EBFCB9D71EB8A53300A10264 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		EBFCB9D91EB8B36600A10264 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		EBFCB9DD1EB8C14B00A10264 /* ProfileImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC29C68EC67BF285488D0AC /* Pods_Ascol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DEA9E8B64028E62D2F3537 /* Pods_AscolTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +117,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B072B13B3EF1271B9E7741A4 /* Pods_AscolUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D85142D1D9E95E4F9451FC9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98BDA71C96B13AC3F30B9EAC /* Pods-Ascol.debug.xcconfig */,
+				24E758F952D2C8187A70FEC7 /* Pods-Ascol.release.xcconfig */,
+				89B281083361AED4FB7DB563 /* Pods-AscolTests.debug.xcconfig */,
+				4B302DD4501D3F6605A0A3BC /* Pods-AscolTests.release.xcconfig */,
+				3AD6B7D65909DE50BCCF6A9B /* Pods-AscolUITests.debug.xcconfig */,
+				CE043780FA55E9D0D3357690 /* Pods-AscolUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EBA349221EBE35CF002EE473 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EBA349231EBE35E0002EE473 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		EBEEE8061EB6EE6C00C83151 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +152,8 @@
 				EBEEE8261EB6EE6C00C83151 /* AscolTests */,
 				EBEEE8311EB6EE6C00C83151 /* AscolUITests */,
 				EBEEE8101EB6EE6C00C83151 /* Products */,
+				D85142D1D9E95E4F9451FC9C /* Pods */,
+				F4FAE9B2B39B2AEF589B18D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,10 +170,16 @@
 		EBEEE8111EB6EE6C00C83151 /* Ascol */ = {
 			isa = PBXGroup;
 			children = (
+				EBA349221EBE35CF002EE473 /* Services */,
+				EBEEE8491EB6F5C200C83151 /* Ascol.entitlements */,
+				EBEEE8441EB6EF0C00C83151 /* Utils */,
+				EBEEE8421EB6EE9700C83151 /* Controller */,
+				EBEEE8411EB6EE9000C83151 /* Model */,
+				EBEEE8401EB6EE8300C83151 /* View */,
 				EBEEE8121EB6EE6C00C83151 /* AppDelegate.swift */,
-				EBEEE8141EB6EE6C00C83151 /* ViewController.swift */,
 				EBEEE8161EB6EE6C00C83151 /* Main.storyboard */,
 				EBEEE8191EB6EE6C00C83151 /* Assets.xcassets */,
+				EBEEE8471EB6F44B00C83151 /* GoogleService-Info.plist */,
 				EBEEE81B1EB6EE6C00C83151 /* LaunchScreen.storyboard */,
 				EBEEE81E1EB6EE6C00C83151 /* Info.plist */,
 			);
@@ -125,6 +204,60 @@
 			path = AscolUITests;
 			sourceTree = "<group>";
 		};
+		EBEEE8401EB6EE8300C83151 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBEEE84E1EB6F6BB00C83151 /* FancyText.swift */,
+				EBEEE8501EB6F6DA00C83151 /* FancyButton.swift */,
+				EBEEE8521EB6F70500C83151 /* RoundView.swift */,
+				EBEEE8541EB6F72B00C83151 /* FancyView.swift */,
+				EBFCB9CF1EB8108A00A10264 /* PostCell.swift */,
+				EBFCB9D31EB88EFE00A10264 /* TitleText.swift */,
+				EBFCB9D71EB8A53300A10264 /* CommentCell.swift */,
+				EBFCB9DD1EB8C14B00A10264 /* ProfileImage.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EBEEE8411EB6EE9000C83151 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EBA349201EBE2D0B002EE473 /* Post.swift */,
+				EBA349271EBE6599002EE473 /* Profile.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EBEEE8421EB6EE9700C83151 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBEEE8141EB6EE6C00C83151 /* SignInVC.swift */,
+				EBEEE84A1EB6F5FE00C83151 /* PostsVC.swift */,
+				EBFCB9D11EB87C2100A10264 /* PostDetailVC.swift */,
+				EBFCB9D51EB89D8C00A10264 /* CommentsVC.swift */,
+				EBFCB9D91EB8B36600A10264 /* ProfileVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EBEEE8441EB6EF0C00C83151 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EBEEE8451EB6EF1700C83151 /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		F4FAE9B2B39B2AEF589B18D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FC365EEAD841383D1D3381F /* Pods_Ascol.framework */,
+				4595D8E231C468B899F6C5E2 /* Pods_AscolTests.framework */,
+				0AB585F507D6CDF4E0B93013 /* Pods_AscolUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBEEE8371EB6EE6C00C83151 /* Build configuration list for PBXNativeTarget "Ascol" */;
 			buildPhases = (
+				577300C0050793E3043ED86E /* [CP] Check Pods Manifest.lock */,
 				EBEEE80B1EB6EE6C00C83151 /* Sources */,
 				EBEEE80C1EB6EE6C00C83151 /* Frameworks */,
 				EBEEE80D1EB6EE6C00C83151 /* Resources */,
+				0A155DFB2B9E814DD4F84795 /* [CP] Embed Pods Frameworks */,
+				EACE192F9187B618A0EABEC1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +285,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBEEE83A1EB6EE6C00C83151 /* Build configuration list for PBXNativeTarget "AscolTests" */;
 			buildPhases = (
+				D75935AEC70E55AA07D1C1A3 /* [CP] Check Pods Manifest.lock */,
 				EBEEE81F1EB6EE6C00C83151 /* Sources */,
 				EBEEE8201EB6EE6C00C83151 /* Frameworks */,
 				EBEEE8211EB6EE6C00C83151 /* Resources */,
+				F37A26E650CD44866F9BC7F5 /* [CP] Embed Pods Frameworks */,
+				B04CBE59212796B20CE69237 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +306,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBEEE83D1EB6EE6C00C83151 /* Build configuration list for PBXNativeTarget "AscolUITests" */;
 			buildPhases = (
+				DCFAF14F7804EBADB24B5037 /* [CP] Check Pods Manifest.lock */,
 				EBEEE82A1EB6EE6C00C83151 /* Sources */,
 				EBEEE82B1EB6EE6C00C83151 /* Frameworks */,
 				EBEEE82C1EB6EE6C00C83151 /* Resources */,
+				DBA4E2D568B3BD93C614EA85 /* [CP] Embed Pods Frameworks */,
+				64DBA952B3ACBCB31B4D11C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +337,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8RD37RWZ37;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					EBEEE8221EB6EE6C00C83151 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -236,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBEEE81D1EB6EE6C00C83151 /* LaunchScreen.storyboard in Resources */,
+				EBEEE8481EB6F44B00C83151 /* GoogleService-Info.plist in Resources */,
 				EBEEE81A1EB6EE6C00C83151 /* Assets.xcassets in Resources */,
 				EBEEE8181EB6EE6C00C83151 /* Main.storyboard in Resources */,
 			);
@@ -257,13 +405,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A155DFB2B9E814DD4F84795 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ascol/Pods-Ascol-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		577300C0050793E3043ED86E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		64DBA952B3ACBCB31B4D11C7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AscolUITests/Pods-AscolUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B04CBE59212796B20CE69237 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AscolTests/Pods-AscolTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D75935AEC70E55AA07D1C1A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DBA4E2D568B3BD93C614EA85 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AscolUITests/Pods-AscolUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCFAF14F7804EBADB24B5037 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EACE192F9187B618A0EABEC1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ascol/Pods-Ascol-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F37A26E650CD44866F9BC7F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AscolTests/Pods-AscolTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EBEEE80B1EB6EE6C00C83151 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBEEE8151EB6EE6C00C83151 /* ViewController.swift in Sources */,
+				EBFCB9D81EB8A53300A10264 /* CommentCell.swift in Sources */,
+				EBEEE84B1EB6F5FE00C83151 /* PostsVC.swift in Sources */,
+				EBFCB9DA1EB8B36600A10264 /* ProfileVC.swift in Sources */,
+				EBEEE8531EB6F70500C83151 /* RoundView.swift in Sources */,
+				EBFCB9D61EB89D8C00A10264 /* CommentsVC.swift in Sources */,
+				EBEEE84F1EB6F6BB00C83151 /* FancyText.swift in Sources */,
+				EBEEE8151EB6EE6C00C83151 /* SignInVC.swift in Sources */,
+				EBA349281EBE6599002EE473 /* Profile.swift in Sources */,
+				EBFCB9D41EB88EFE00A10264 /* TitleText.swift in Sources */,
+				EBEEE8511EB6F6DA00C83151 /* FancyButton.swift in Sources */,
+				EBFCB9D01EB8108A00A10264 /* PostCell.swift in Sources */,
 				EBEEE8131EB6EE6C00C83151 /* AppDelegate.swift in Sources */,
+				EBA349211EBE2D0B002EE473 /* Post.swift in Sources */,
+				EBFCB9D21EB87C2100A10264 /* PostDetailVC.swift in Sources */,
+				EBEEE8551EB6F72B00C83151 /* FancyView.swift in Sources */,
+				EBFCB9DE1EB8C14B00A10264 /* ProfileImage.swift in Sources */,
+				EBEEE8461EB6EF1700C83151 /* Constants.swift in Sources */,
+				EBA349241EBE35E0002EE473 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +717,10 @@
 		};
 		EBEEE8381EB6EE6C00C83151 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98BDA71C96B13AC3F30B9EAC /* Pods-Ascol.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Ascol/Ascol.entitlements;
 				DEVELOPMENT_TEAM = 8RD37RWZ37;
 				INFOPLIST_FILE = Ascol/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -428,8 +732,10 @@
 		};
 		EBEEE8391EB6EE6C00C83151 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24E758F952D2C8187A70FEC7 /* Pods-Ascol.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Ascol/Ascol.entitlements;
 				DEVELOPMENT_TEAM = 8RD37RWZ37;
 				INFOPLIST_FILE = Ascol/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -441,6 +747,7 @@
 		};
 		EBEEE83B1EB6EE6C00C83151 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89B281083361AED4FB7DB563 /* Pods-AscolTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,6 +763,7 @@
 		};
 		EBEEE83C1EB6EE6C00C83151 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B302DD4501D3F6605A0A3BC /* Pods-AscolTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +779,7 @@
 		};
 		EBEEE83E1EB6EE6C00C83151 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD6B7D65909DE50BCCF6A9B /* Pods-AscolUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 8RD37RWZ37;
@@ -485,6 +794,7 @@
 		};
 		EBEEE83F1EB6EE6C00C83151 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE043780FA55E9D0D3357690 /* Pods-AscolUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 8RD37RWZ37;
@@ -516,6 +826,7 @@
 				EBEEE8391EB6EE6C00C83151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBEEE83A1EB6EE6C00C83151 /* Build configuration list for PBXNativeTarget "AscolTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +835,7 @@
 				EBEEE83C1EB6EE6C00C83151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBEEE83D1EB6EE6C00C83151 /* Build configuration list for PBXNativeTarget "AscolUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +844,7 @@
 				EBEEE83F1EB6EE6C00C83151 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

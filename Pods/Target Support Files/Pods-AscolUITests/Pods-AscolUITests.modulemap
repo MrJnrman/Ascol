@@ -1,0 +1,6 @@
+framework module Pods_AscolUITests {
+  umbrella header "Pods-AscolUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
