@@ -15,7 +15,7 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var profile = Profile()
-    var posts = [Post]()
+    var posts: [Post]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,9 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        DataService.ds.REF_POSTS.observe( .value, with: { (snapshot) in
+        posts = [Post]()
+        
+        DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
@@ -48,7 +50,6 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let userId = (FIRAuth.auth()?.currentUser?.uid)!
         DataService.ds.REF_USERS.child(userId).observeSingleEvent(of: .value, with: {(snapshot) in
-            print("GOT IN")
             let value = snapshot.value as? NSDictionary
             self.profile.name = value?["name"] as? String ?? ""
             self.profile.imageUrl = value?["imageURL"] as? String ?? ""
@@ -62,9 +63,14 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.row]
-        print("TITLE: \(post.title)")
         
-        return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
+            cell.configureCell(post: post)
+            
+            return cell
+        } else {
+            return PostCell()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,7 +83,9 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "PostDetail", sender: nil)
+        let post = posts[indexPath.row]
+        
+        performSegue(withIdentifier: "PostDetail", sender: post)
     }
     
     @IBAction func signOutButtonPressed(_ sender: UIButton) {
@@ -105,6 +113,15 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let profileVC = segue.destination as? ProfileVC {
                 if let profile = sender as? Profile {
                     profileVC.profile = profile
+                }
+            }
+        }
+        
+        if segue.identifier == "PostDetail" {
+            
+            if let detailVC = segue.destination as? PostDetailVC {
+                if let post = sender as? Post {
+                    detailVC.post = post
                 }
             }
         }

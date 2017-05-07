@@ -33,28 +33,35 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//    func configureCell(post: Post, image: UIImage?) {
-//        self.post = post
-//        self.postLbl.text = post.title
-//        self.likesCount.text = post.likes
-//        self.viewsCount.text = post.views
-//        self.createdAt.text = post.date
-//        
-//        if image != nil  {
-//            self.profileImg.image = image
-//        } else {
-//            if let imageURL = post.imageURL {
-//                let ref = FIRStorage.storage().reference(forURL: imageURL)
-//                ref.data(withMaxSize: 2 * 1024 * 1024) { (data, error) in
-//                    if error != nil {
-//                        print("ERROR =========>")
-//                    } else {
-//                        print("Image Downloaded from firebase storage")
-//                        let image = UIImage(data: data!)
-//                    }
-//                }
-//            }
-//        }
-//    }
+    func configureCell(post: Post) {
+        self.post = post
+        self.postLbl.text = post.title
+        self.likesCount.text = post.likes
+        self.viewsCount.text = post.views
+        self.createdAt.text = post.date
+        
+        if post.imageURL != "" {
+            let ref = FIRStorage.storage().reference(forURL: post.imageURL)
+            
+            if let img = ProfileVC.imageCache.object(forKey: post.imageURL as NSString) {
+                self.profileImg.image = img
+            } else {
+                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    if error != nil {
+                        print("AN ERROR!!!!!!!!!!!!")
+                    } else {
+                        print("Image DOWNLOADED!!!!!!!!!!!!!!!!!!!!")
+                        if let imgData = data {
+                            if let image = UIImage(data: imgData) {
+                                self.profileImg.image = image
+                                ProfileVC.imageCache.setObject(image, forKey: self.post.imageURL as NSString)
+                            }
+                        }
+                    }
+                    
+                })
+            }
+        }
+    }
 
 }

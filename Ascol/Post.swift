@@ -73,11 +73,11 @@ class Post {
     }
     
     var type: String {
-        if _postId == nil {
-            _postId = ""
+        if _type == nil {
+            _type = ""
         }
         
-        return _postId
+        return _type
     }
     
     var category: String {
@@ -169,6 +169,14 @@ class Post {
         
         if let location = postData["location"] as? String {
             self._location = location
+        }
+        
+        if let details = postData["details"] as? String {
+            self._details = details
+        }
+        
+        if let comments = postData["comments"] as? String {
+            self._comments = comments
         }
         
         
