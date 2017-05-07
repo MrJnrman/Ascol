@@ -26,7 +26,11 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         posts = [Post]()
         
-        DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: { (snapshot) in
+        DataService.ds.REF_POSTS.observe( .value, with: { (snapshot) in
+            
+            if self.posts.count > 0 {
+                self.posts = [Post]()
+            }
             
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
@@ -88,20 +92,6 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "PostDetail", sender: post)
     }
     
-    @IBAction func signOutButtonPressed(_ sender: UIButton) {
-        let removeSuccessful: Bool = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-        if removeSuccessful == true {
-            do {
-                try FIRAuth.auth()?.signOut()
-                performSegue(withIdentifier: "SignInVC", sender: nil)
-            } catch let err as NSError {
-                print(err.debugDescription)
-            }
-            
-        }
-
-    }
-    
     @IBAction func profileButtonPressed(_ sender: UIButton) {
         
         performSegue(withIdentifier: "Profile", sender: profile)
@@ -117,6 +107,14 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        if segue.identifier == "CreatePost" {
+            if let createPostVC = segue.destination as? CreatePostVC {
+                if let profile = sender as? Profile {
+                    createPostVC.profile = profile
+                }
+            }
+        }
+        
         if segue.identifier == "PostDetail" {
             
             if let detailVC = segue.destination as? PostDetailVC {
@@ -126,5 +124,11 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
+    @IBAction func createPostPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "CreatePost", sender: profile)
+    }
+    
     
 }

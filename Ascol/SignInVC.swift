@@ -92,8 +92,6 @@ class SignInVC: UIViewController {
     
     @IBAction func SigninPressed(_ sender: UIButton) {
         
-        print("here")
-        
         if let email = emailTextField.text, let pwd = passwordTextField.text {
             
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
@@ -102,7 +100,7 @@ class SignInVC: UIViewController {
                     print("Email User authenticated with Firebase")
                     
                     if let user = user {
-                        let userData = ["provider": user.providerID,
+                        _ = ["provider": user.providerID,
                                         "name": user.email]
                         self.completeSignIn(id: user.uid)
                     }

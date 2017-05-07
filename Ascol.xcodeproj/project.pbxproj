@@ -12,6 +12,7 @@
 		EBA349211EBE2D0B002EE473 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA349201EBE2D0B002EE473 /* Post.swift */; };
 		EBA349241EBE35E0002EE473 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA349231EBE35E0002EE473 /* DataService.swift */; };
 		EBA349281EBE6599002EE473 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA349271EBE6599002EE473 /* Profile.swift */; };
+		EBA3492A1EBED846002EE473 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA349291EBED846002EE473 /* CreatePostVC.swift */; };
 		EBEEE8131EB6EE6C00C83151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8121EB6EE6C00C83151 /* AppDelegate.swift */; };
 		EBEEE8151EB6EE6C00C83151 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEEE8141EB6EE6C00C83151 /* SignInVC.swift */; };
 		EBEEE8181EB6EE6C00C83151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEEE8161EB6EE6C00C83151 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		EBA349201EBE2D0B002EE473 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		EBA349231EBE35E0002EE473 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		EBA349271EBE6599002EE473 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		EBA349291EBED846002EE473 /* CreatePostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		EBEEE80F1EB6EE6C00C83151 /* Ascol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ascol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEEE8121EB6EE6C00C83151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBEEE8141EB6EE6C00C83151 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				EBFCB9D11EB87C2100A10264 /* PostDetailVC.swift */,
 				EBFCB9D51EB89D8C00A10264 /* CommentsVC.swift */,
 				EBFCB9D91EB8B36600A10264 /* ProfileVC.swift */,
+				EBA349291EBED846002EE473 /* CreatePostVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				EBEEE8551EB6F72B00C83151 /* FancyView.swift in Sources */,
 				EBFCB9DE1EB8C14B00A10264 /* ProfileImage.swift in Sources */,
 				EBEEE8461EB6EF1700C83151 /* Constants.swift in Sources */,
+				EBA3492A1EBED846002EE473 /* CreatePostVC.swift in Sources */,
 				EBA349241EBE35E0002EE473 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

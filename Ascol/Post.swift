@@ -16,6 +16,7 @@ class Post {
     private var _date: String!
     private var _postId: String!
     private var _type: String!
+    private var _tags: String!
     private var _category: String!
     private var _course: String!
     private var _location: String!

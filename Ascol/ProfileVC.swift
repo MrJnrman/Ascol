@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftKeychainWrapper
 
 class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -73,7 +74,6 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
     }
     
@@ -103,25 +103,6 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             print("Image wasnt Selected")
         }
         
-//        if let imageURL = info[UIImagePickerControllerReferenceURL] as? URL {
-//            if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-//                let userId = FIRAuth.auth()?.currentUser?.uid
-//                let profileImageRef = DataService.ds.REF_POST_IMAGES.child("\(String(describing: userId!)).jpg")
-//                
-//                let uploadTask = profileImageRef.putFile(imageURL, metadata: nil) { metadata, error in
-//                    if error == nil {
-//                        print("ERROR in upload =======+>")
-//                    } else {
-//                        let downloadURL = metadata!.downloadURL()
-//                        print(downloadURL!)
-//                        self.profileImage.image = image
-//                    }
-//                }
-//            } else {
-//                print("Image wasnt Selected")
-//            }
-//
-//        }
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
@@ -133,6 +114,20 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         let userId: String = (FIRAuth.auth()?.currentUser?.uid)!
         DataService.ds.REF_USERS.child("\(userId)/name").setValue(usernameTxtField.text)
     }
+    
+    @IBAction func signOutPressed(_ sender: UIButton) {
+        let removeSuccessful: Bool = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        if removeSuccessful == true {
+            do {
+                try FIRAuth.auth()?.signOut()
+                performSegue(withIdentifier: "SignOut", sender: nil)
+            } catch let err as NSError {
+                print(err.debugDescription)
+            }
+            
+        }
+    }
+    
     
 
 }

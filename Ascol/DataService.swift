@@ -21,6 +21,9 @@ class DataService {
     private var _REF_BASE = DB_BASE
     private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USERS = DB_BASE.child("users")
+    private var _REF_COURSES = DB_BASE.child("courses")
+    private var _REF_TYPES = DB_BASE.child("type")
+    private var _REF_CATEGORIES = DB_BASE.child("categories")
     
     //Storage references
     private var _REF_PROFILE_IMAGES = STORAGE_BASE.child("profile-pictures")
@@ -39,6 +42,18 @@ class DataService {
     
     var REF_POSTS: FIRDatabaseReference {
         return _REF_POSTS
+    }
+    
+    var REF_COURSES: FIRDatabaseReference {
+        return _REF_COURSES
+    }
+    
+    var REF_TYPES: FIRDatabaseReference {
+        return _REF_TYPES
+    }
+    
+    var REF_CATEGORIES: FIRDatabaseReference {
+        return _REF_CATEGORIES
     }
     
     func createFirbaseDBUser(uid: String, userData: Dictionary<String, String>){
