@@ -13,7 +13,7 @@ class Post {
     private var _title: String!
     private var _likes: String!
     private var _views: String!
-    private var _date: String!
+    private var _date: Double!
     private var _postId: String!
     private var _type: String!
     private var _tags: String!
@@ -24,6 +24,16 @@ class Post {
     private var _comments: String!
     private var _creator: String!
     private var _imageURL: String!
+    private var _commentId: String!
+    
+    var commentId: String {
+        
+        if _commentId == nil {
+            _commentId = ""
+        }
+        
+        return _commentId
+    }
     
     var imageURL: String {
         if _imageURL == nil {
@@ -57,9 +67,9 @@ class Post {
         return _views
     }
     
-    var date: String {
+    var date: Double {
         if _date == nil {
-            _date = ""
+            _date = 0.0
         }
         
         return _date
@@ -129,6 +139,15 @@ class Post {
         return _creator
     }
     
+    var tags: String {
+        
+        if _tags == nil {
+            _tags = ""
+        }
+        
+        return _tags
+    }
+    
     init(postKey: String, postData: Dictionary<String, AnyObject>) {
         self._postId = postKey
         
@@ -152,7 +171,7 @@ class Post {
             self._course = course
         }
         
-        if let date = postData["date"] as? String {
+        if let date = postData["date"] as? Double {
             self._date = date
         }
         
@@ -178,6 +197,14 @@ class Post {
         
         if let comments = postData["comments"] as? String {
             self._comments = comments
+        }
+        
+        if let commentId = postData["commentId"] as? String {
+            self._commentId = commentId
+        }
+        
+        if let tags = postData["tags"] as? String {
+            self._tags = tags
         }
         
         

@@ -22,6 +22,8 @@ class PostDetailVC: UIViewController {
     @IBOutlet weak var creatorImage: UIImageView!
     @IBOutlet weak var createLbl: UILabel!
     @IBOutlet weak var courseLbl: UILabel!
+    @IBOutlet weak var likeLbl: UILabel!
+    
     
 
     override func viewDidLoad() {
@@ -35,12 +37,14 @@ class PostDetailVC: UIViewController {
         detailsLbl.text = post.details
         createLbl.text = post.creator
         commentsLbl.text = post.comments
+        likeLbl.text = post.likes
         
         if post.imageURL != "" {
             let ref = FIRStorage.storage().reference(forURL: post.imageURL)
             
             if let img = ProfileVC.imageCache.object(forKey: post.imageURL as NSString) {
                 self.creatorImage.image = img
+                
             } else {
                 ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
                     if error != nil {
@@ -73,9 +77,29 @@ class PostDetailVC: UIViewController {
     
     @IBAction func commentsButtonPressed(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "Comments", sender: nil)
+        performSegue(withIdentifier: "Comments", sender: post)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Comments" {
+            if let commentVC = segue.destination as? CommentsVC {
+                if let post = sender as? Post {
+                    commentVC.post = post
+                }
+            }
+        }
+    }
+    
+    @IBAction func likeBtnPressed(_ sender: UIButton) {
+        
+        let likes = Int(likeLbl.text!)! + 1
+        
+        DataService.ds.REF_POSTS.child(post.commentId).child("likes").setValue(likes)
+        
+        likeLbl.text = "\(likes)"
+        
+    }
 
     /*
     // MARK: - Navigation

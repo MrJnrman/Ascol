@@ -9,6 +9,12 @@
 import UIKit
 
 class CommentCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var messgeLbl: UILabel!
+    @IBOutlet weak var creatorLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +25,16 @@ class CommentCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(comment: Comment) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        
+        self.messgeLbl.text = comment.message
+        self.creatorLbl.text = comment.creator
+        self.dateLbl.text = dateFormatter.string(from: NSDate(timeIntervalSince1970: comment.date) as Date)
     }
 
 }

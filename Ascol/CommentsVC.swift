@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
-class CommentsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CommentsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var commentTxtField: UITextField!
+    
+    var comments: [Comment]!
+    var post: Post!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +25,37 @@ class CommentsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         tableView.delegate = self
         tableView.dataSource = self
+        commentTxtField.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.KeyboardWillShow(sender:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.KeyboardWillHide(sender:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        comments = [Comment]()
+        
+        DataService.ds.REF_COMMENTS.child(post.commentId).observe( .value, with: { (snapshot) in
+            
+            if self.comments.count > 0 {
+                self.comments = [Comment] ()
+            }
+            
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshot {
+                    print("Comment \(snap)")
+                    
+                    if let commentDict = snap.value as? Dictionary<String, AnyObject> {
+                        
+                        let comment = Comment(commentData: commentDict)
+                        self.comments.append(comment)
+                    }
+                }
+                
+                self.comments = self.comments.sorted(by: {$0.date < $1.date})
+            }
+            
+            self.tableView.reloadData()
+        
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,8 +68,16 @@ class CommentsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
         
+        let comment = comments[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as? CommentCell {
+            cell.configureCell(comment: comment)
+            
+            return cell
+        } else {
+            return CommentCell()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,9 +85,37 @@ class CommentsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return comments.count
     }
 
+    @IBAction func submitBtnPressed(_ sender: UIButton) {
+        
+        let postKey = DataService.ds.REF_COMMENTS.child(post.commentId).childByAutoId().key
+        
+        if let text = commentTxtField.text, !text.isEmpty {
+            let commentData = ["message": text,
+                               "creator": post.creator,
+                               "date": NSDate().timeIntervalSince1970] as [String : Any]
+            
+            DataService.ds.REF_COMMENTS.child(post.commentId).child(postKey).setValue(commentData)
+        }
+        
+        self.commentTxtField.text = ""
+    }
+    
+    func KeyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y = -215
+    }
+    
+    func KeyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+    }
 
     /*
     // MARK: - Navigation

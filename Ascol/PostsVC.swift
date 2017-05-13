@@ -10,12 +10,15 @@ import UIKit
 import SwiftKeychainWrapper
 import Firebase
 
-class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var profile = Profile()
+    var filteredPosts = [Post]()
     var posts: [Post]!
+    var inSearchMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,11 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
+        
+        searchBar.returnKeyType = UIReturnKeyType.done
+        
+        
         
         posts = [Post]()
         
@@ -42,11 +50,35 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         self.posts.append(post)
                     }
                 }
+                
+                self.posts = self.posts.sorted(by: {$0.date < $1.date})
             }
             
             self.tableView.reloadData()
         })
 
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text == nil || searchBar.text == "" {
+            inSearchMode = false
+            tableView.reloadData()
+        } else {
+            
+            inSearchMode = true
+            let lower = searchBar.text!.lowercased()
+            
+            print(lower)
+            
+            filteredPosts = posts.filter({ $0.tags.range(of: lower) != nil})
+            print(filteredPosts.count)
+            tableView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,9 +98,16 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.row]
-        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
+            
+            let post: Post!
+            
+            if inSearchMode {
+                post = filteredPosts[indexPath.row]
+            } else {
+                post = posts[indexPath.row]
+            }
+            
             cell.configureCell(post: post)
             
             return cell
@@ -82,13 +121,24 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if inSearchMode {
+            return filteredPosts.count
+        }
+        
         return posts.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let post = posts[indexPath.row]
+        let post: Post!
         
+        if inSearchMode {
+            post = filteredPosts[indexPath.row]
+        } else {
+            post = posts[indexPath.row]
+        }
+
         performSegue(withIdentifier: "PostDetail", sender: post)
     }
     
@@ -124,6 +174,7 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
     
     @IBAction func createPostPressed(_ sender: UIButton) {
         

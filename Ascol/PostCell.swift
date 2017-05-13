@@ -15,7 +15,6 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postLbl: UILabel!
     @IBOutlet weak var createdAt: UILabel!
     @IBOutlet weak var likesCount: UILabel!
-    @IBOutlet weak var viewsCount: UILabel!
     
     
     
@@ -34,11 +33,15 @@ class PostCell: UITableViewCell {
     }
     
     func configureCell(post: Post) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        
         self.post = post
         self.postLbl.text = post.title
         self.likesCount.text = post.likes
-        self.viewsCount.text = post.views
-        self.createdAt.text = post.date
+        self.createdAt.text = dateFormatter.string(from: NSDate(timeIntervalSince1970: post.date) as Date)
         
         if post.imageURL != "" {
             let ref = FIRStorage.storage().reference(forURL: post.imageURL)

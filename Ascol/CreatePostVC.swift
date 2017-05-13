@@ -163,7 +163,7 @@ class CreatePostVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
         
-        let currentDate = dateFormatter.string(from: Date())
+//        let currentDate = dateFormatter.string(from: Date())
         let userData = ["category": categoryBtn.currentTitle!,
                         "commentId": postKey,
                         "title": titleTxtField.text!,
@@ -177,7 +177,12 @@ class CreatePostVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
                         "location": locationTextField.text!,
                         "imageURL": profile.imageUrl,
                         "creator": profile.name,
-                        "date": currentDate] as [String : Any]
+                        "date": NSDate().timeIntervalSince1970] as [String : Any]
+        
+        //                        "date": currentDate] as [String : Any]
+        
+//        print("++_+_+_+_+_+_+_+_")
+//        print(NSDate(timeIntervalSince1970: NSDate().timeIntervalSince1970))
         
         DataService.ds.REF_POSTS.child(postKey).setValue(userData)
         
