@@ -34,24 +34,6 @@ class SignInVC: UIViewController {
         
     }
     
-//    func downloadPostDetails() {
-//        let userId = FIRAuth.auth()?.currentUser?.uid
-//        DataService.ds.REF_POSTS.observeSingleEvent(of: .value, with: {(snapshot) in
-//            print("GOT IN")
-//            let value = snapshot.value as? NSDictionary
-//            let title = value?["title"] as? String ?? ""
-//            let comment = value?["comments"] as? String ?? ""
-//            let likes = value?["likes"] as? Int
-//            print(comment)
-//            print("\(likes!)")
-//            print(title)
-//        
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
-//        
-//    }
-    
     @IBAction func FBBtnPressed(_ sender: UIButton) {
         
         let loginManager = LoginManager()

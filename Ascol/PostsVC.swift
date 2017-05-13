@@ -19,9 +19,13 @@ class PostsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     var filteredPosts = [Post]()
     var posts: [Post]!
     var inSearchMode = false
+//    static var username: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
 
         // Do any additional setup after loading the view.
         tableView.delegate = self

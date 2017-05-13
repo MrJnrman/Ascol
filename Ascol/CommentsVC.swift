@@ -90,17 +90,31 @@ class CommentsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
 
     @IBAction func submitBtnPressed(_ sender: UIButton) {
         
-        let postKey = DataService.ds.REF_COMMENTS.child(post.commentId).childByAutoId().key
+        let userId = (FIRAuth.auth()?.currentUser?.uid)!
+//        var displayName: String!
         
-        if let text = commentTxtField.text, !text.isEmpty {
-            let commentData = ["message": text,
-                               "creator": post.creator,
-                               "date": NSDate().timeIntervalSince1970] as [String : Any]
+        DataService.ds.REF_USERS.child(userId).observeSingleEvent(of: .value, with: { (snapshot) in
             
-            DataService.ds.REF_COMMENTS.child(post.commentId).child(postKey).setValue(commentData)
+            let value = snapshot.value as? NSDictionary
+            let name = value?["name"] as? String ?? ""
+            print(name)
+            
+            let postKey = DataService.ds.REF_COMMENTS.child(self.post.commentId).childByAutoId().key
+            
+            if let text = self.commentTxtField.text, !text.isEmpty {
+                let commentData = ["message": text,
+                                   "creator": name,
+                                   "date": NSDate().timeIntervalSince1970] as [String : Any]
+                
+                DataService.ds.REF_COMMENTS.child(self.post.commentId).child(postKey).setValue(commentData)
+            }
+            
+            self.commentTxtField.text = ""
+            
+            
+        }) { error in
+            print(error.localizedDescription)
         }
-        
-        self.commentTxtField.text = ""
     }
     
     func KeyboardWillShow(sender: NSNotification) {
